@@ -9,7 +9,7 @@ Goli is a CLI Tool for running Go commands with colorized output.
 Using Goli is very easy. First, use `go get` to install the latest version of the library. This command will install the `goli` executable along with the library and its dependencies:
 
 ```shell
-go get -u github.com/arthurvdiniz/goli
+go get github.com/arthurvdiniz/goli
 ```
 
 ## Commands
