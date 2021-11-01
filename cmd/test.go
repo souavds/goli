@@ -28,9 +28,9 @@ import (
 var testCmd = &cobra.Command{
 	Use:                "test",
 	Short:              "go test {args} but with colorized output",
-	Example:            "goli test './... -v'",
+	Example:            "goli test ./... -v",
 	Args:               cobra.ArbitraryArgs,
-	FParseErrWhitelist: cobra.FParseErrWhitelist{UnknownFlags: true},
+	DisableFlagParsing: true,
 	Run: func(cmd *cobra.Command, args []string) {
 		color := colorizer.New()
 		arguments := gcli.BuildArgs("test", args)
@@ -40,9 +40,7 @@ var testCmd = &cobra.Command{
 
 		for _, line := range status.Stdout {
 			fmt.Println(color.Format(line))
-
 		}
-
 	},
 }
 

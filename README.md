@@ -19,12 +19,14 @@ go get github.com/arthurvdiniz/goli
 
 ## Commands
 
+Under the hood `goli` is going to use the `go` binary installed in your system.
+
 ### Test
 
-For running test command put your arguments and flags inside single quotes.
+For running test command just use `goli` instead of `go`.
 
 ```shell
-goli test './... -v'
+goli test ./... -v
 ```
 
 After running the command you'll get an example of output:
