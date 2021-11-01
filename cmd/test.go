@@ -19,6 +19,7 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/arthurvdiniz/goli/internal/gcli"
 	"github.com/charmbracelet/lipgloss"
 	gcmd "github.com/go-cmd/cmd"
 	"github.com/spf13/cobra"
@@ -49,7 +50,7 @@ var testCmd = &cobra.Command{
 	Args:               cobra.ArbitraryArgs,
 	FParseErrWhitelist: cobra.FParseErrWhitelist{UnknownFlags: true},
 	Run: func(cmd *cobra.Command, args []string) {
-		arguments := buildArguments("test", args)
+		arguments := gcli.BuildArgs("test", args)
 
 		command := gcmd.NewCmd("go", arguments...)
 		status := <-command.Start()
@@ -80,18 +81,6 @@ func colorizedLine(line string) string {
 		line = strings.Replace(line, s.Key, style.Render(s.Key), 1)
 	}
 	return line
-}
-
-func buildArguments(subcommand string, args []string) []string {
-	arguments := fmt.Sprintf("%s ", subcommand)
-	for i, arg := range args {
-		arguments = arguments + arg
-		if i != len(args)-1 {
-			arguments = arguments + " "
-		}
-	}
-
-	return strings.Fields(arguments)
 }
 
 func init() {
