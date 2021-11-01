@@ -12,6 +12,12 @@ Using Goli is very easy. First, use `go get` to install the latest version of th
 go get github.com/arthurvdiniz/goli
 ```
 
+Add `goli` to your binaries folder
+
+```shell
+sudo ln -s ${GOPATH}/bin/goli /usr/local/bin/goli 
+```
+
 ## Commands
 
 ### Test
