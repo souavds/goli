@@ -1,5 +1,7 @@
 # Goli
 
+[![codecov](https://codecov.io/gh/arthurvdiniz/goli/branch/main/graph/badge.svg?token=ZnjqVDgZk6)](https://codecov.io/gh/arthurvdiniz/goli)
+
 Goli is a CLI Tool for running Go commands with colorized output.
 
 > Note: Goli is still a WIP. It has very basic commands and limitations. Feel free to contribute with the project.
